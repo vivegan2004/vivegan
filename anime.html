@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Anime Recommendations</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        body {
+            background-image: url('http://www.pixelstalk.net/wp-content/uploads/2016/10/Anime-Landscape-Backgrounds.jpg'); 
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h2 style="color: black;">ANIME RECOMMENDATIONS</h2>
+        <form id="search-form" action="/search" method="GET">
+            <input type="text" id="search-input" name="query" placeholder="Search for anime...">
+            <button type="button" id="search-button">Search</button>
+        </form>
+    </header>
+
+    <!-- Add a div to display the result -->
+    <div id="result"></div>
+
+    <script>
+        document.getElementById("search-button").addEventListener("click", function() {
+            var inputValue = document.getElementById("search-input").value;
+            var displayString = "MORE LIKE THIS: " + inputValue;
+            document.getElementById("result").textContent = displayString;
+        });
+    </script>
+</body>
+</html>
+
